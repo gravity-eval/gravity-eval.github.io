@@ -203,10 +203,9 @@ Models Suffer Sub-Earth Gravity and Don’t Know Galileo’s Principle...for now
 
 <!-- DBD Section Controls -->
 <div class="controls">
-    <button id="toggleViewBtn" onclick="toggleView()">🖼️ Galileo Check</button>
-    <button onclick="playPauseVideos()">▶️ Play / ⏸️ Pause All</button>
+    <button onclick="playPauseSection('dbd')">▶️ Play / ⏸️ Pause All</button>
     <button onclick="toggleSpeedSection('dbd')">⏩ Speed Double Ball Drops (0.33x/ 1.0x)</button>
-    
+    <button id="toggleViewBtn" onclick="toggleView()">🖼️ Galileo Check</button>
 </div>
 
 <!-- Grid of Videos -->
@@ -258,10 +257,6 @@ Models Suffer Sub-Earth Gravity and Don’t Know Galileo’s Principle...for now
     <img src="figures/double_ball_quali.png" alt="Summary Image" style="max-width:100%; height:auto;">
 </div>
 
-.grid-item video {
-    width: 3in;   /* 3 inches wide */
-    height: 2in;  /* 2 inches tall */
-}
 
 
 <script>
@@ -299,7 +294,7 @@ function toggleView() {
 
 <!-- SBD Section Controls ONLY -->
 <div class="controls">
-    <button onclick="playPauseVideos()">▶️ Play / ⏸️ Pause All</button>
+    <button onclick="playPauseSection('sbd')">▶️ Play / ⏸️ Pause All</button>
     <button onclick="toggleSpeedSection('sbd')">⏩ Speed Single Ball Drops (0.33x/ 1.0x)</button>
 </div>
 
@@ -390,7 +385,7 @@ function toggleView() {
 
 <!-- Inclined Plane Controls ONLY -->
 <div class="controls">
-    <button onclick="playPauseVideos()">▶️ Play / ⏸️ Pause All</button>
+    <button onclick="playPauseSection('inclined')">▶️ Play / ⏸️ Pause All</button>
     <button onclick="toggleSpeedSection('inclined')">⏩ Speed Inclined Plane (0.33x/ 1.0x)</button>
 </div>
 
@@ -436,7 +431,7 @@ function toggleView() {
 
 <!-- Real World Controls -->
 <div class="controls">
-    <button onclick="playPauseVideos()">▶️ Play / ⏸️ Pause All</button>
+    <button onclick="playPauseSection('real')">▶️ Play / ⏸️ Pause All</button>
     <button onclick="toggleSpeedSection('real')">⏩ Speed Real World (0.33x/ 1.0x)</button>
 </div>
 
@@ -506,18 +501,21 @@ function toggleView() {
 <!-- JavaScript -->
 <script>
 
-let videosPlaying = false;
+let sectionPlaying = {};
 
-function playPauseVideos() {
-    const videos = document.querySelectorAll('#videoGrid video');
+function playPauseSection(sectionClass) {
+    const videos = document.querySelectorAll(`.${sectionClass}`);
+    let isPlaying = sectionPlaying[sectionClass] || false;
+
     videos.forEach(video => {
-        if (videosPlaying) {
+        if (isPlaying) {
             video.pause();
         } else {
             video.play();
         }
     });
-    videosPlaying = !videosPlaying;
+
+    sectionPlaying[sectionClass] = !isPlaying;
 }
 
 const sectionSpeedState = {};
