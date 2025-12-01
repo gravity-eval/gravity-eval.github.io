@@ -136,7 +136,7 @@ Models Suffer Sub-Earth Gravity and Don’t Know Galileo’s Principle...for now
 <div class="controls">
     <button onclick="playSection('teaser')">▶️ Play Teaser</button>
     <button onclick="pauseSection('teaser')">⏸️ Pause Teaser</button>
-    <button onclick="toggleSpeedSection('teaser')">⏩ Speed Teaser (8 fps/ 24 fps)</button>
+    <button onclick="toggleSpeedSection('teaser')">⏩ Speed Teaser (0.33x/ 1.0x)</button>
 </div>
 
 <div class="video-strip">
@@ -184,7 +184,7 @@ Models Suffer Sub-Earth Gravity and Don’t Know Galileo’s Principle...for now
 <div class="controls">
     <button onclick="playSection('sbd')">▶️ Play Single Ball Drops</button>
     <button onclick="pauseSection('sbd')">⏸️ Pause Single Ball Drops</button>
-    <button onclick="toggleSpeedSection('sbd')">⏩ Speed Single Ball Drops (8 fps/ 24 fps)</button>
+    <button onclick="toggleSpeedSection('sbd')">⏩ Speed Single Ball Drops (0.33x/ 1.0x)</button>
 </div>
 
 
@@ -255,6 +255,17 @@ Models Suffer Sub-Earth Gravity and Don’t Know Galileo’s Principle...for now
     </div>
 </div>
 
+<div style="text-align:center; margin:30px 0;">
+    <img src="figures/single_ball_table.png" alt="Figure 1: Gravity estimation results" style="width:60%;">
+    <p style="font-size:14px; color:#555; margin-top:8px;">
+        <b>Figure 1:</b> We report effective gravity values computed as g<sub>eff</sub> = 2h/t<sup>2</sup> (m/s<sup>2</sup>).
+        The ground truth is 9.81 m/s<sup>2</sup>. All models under-accelerate, and Gravity Adapters
+        consistently reduce this deficit. Reported mean values are averaged over four random seeds
+        and all test examples. Median and Range values are across all seeds and test samples.
+    </p>
+</div>
+
+
 <!-- -------------------------------------------------------------- -->
 <!-- DOUBLE BALL DROPS SECTION -->
 <!-- -------------------------------------------------------------- -->
@@ -266,7 +277,7 @@ Models Suffer Sub-Earth Gravity and Don’t Know Galileo’s Principle...for now
 <div class="controls">
     <button onclick="playSection('dbd')">▶️ Play Double Ball Drops</button>
     <button onclick="pauseSection('dbd')">⏸️ Pause Double Ball Drops</button>
-    <button onclick="toggleSpeedSection('dbd')">⏩ Speed Double Ball Drops (8 fps/ 24 fps)</button>
+    <button onclick="toggleSpeedSection('dbd')">⏩ Speed Double Ball Drops (0.33x/ 1.0x)</button>
 </div>
 
 <!-- Row 1 -->
@@ -347,7 +358,7 @@ Models Suffer Sub-Earth Gravity and Don’t Know Galileo’s Principle...for now
 <div class="controls">
     <button onclick="playSection('inclined')">▶️ Play Inclined Plane</button>
     <button onclick="pauseSection('inclined')">⏸️ Pause Inclined Plane</button>
-    <button onclick="toggleSpeedSection('inclined')">⏩ Speed Inclined Plane (8fps / 24fps)</button>
+    <button onclick="toggleSpeedSection('inclined')">⏩ Speed Inclined Plane (0.33x/ 1.0x)</button>
 </div>
 
 <!-- Row 1 (no captions) -->
@@ -394,7 +405,7 @@ Models Suffer Sub-Earth Gravity and Don’t Know Galileo’s Principle...for now
 <div class="controls">
     <button onclick="playSection('real')">▶️ Play Real World</button>
     <button onclick="pauseSection('real')">⏸️ Pause Real World</button>
-    <button onclick="toggleSpeedSection('real')">⏩ Speed Real World (8fps / 24fps)</button>
+    <button onclick="toggleSpeedSection('real')">⏩ Speed Real World (0.33x/ 1.0x)</button>
 </div>
 
 <!-- Row 1 -->
