@@ -277,81 +277,80 @@ Models Suffer Sub-Earth Gravity and Don’t Know Galileo’s Principle...for now
 <!-- -------------------------------------------------------------- -->
 
 <h2>Double Ball Drops</h2>
-<div class="caption">Generated Videos with Double Ball Drops show violation of Galileo’s principle - The balls travel unequal distance in equal amounts of time. The gravity adapter finetuned on Wan 5B with just 100 samples corrects this violation</div>
+<div class="caption">
+    Generated Videos with Double Ball Drops show violation of Galileo’s principle - The balls travel unequal distance in equal amounts of time. The gravity adapter finetuned on Wan 5B with just 100 samples corrects this violation
+</div>
 
-<!-- DBD Section Controls ONLY -->
+<!-- DBD Section Controls -->
 <div class="controls">
     <button onclick="playSection('dbd')">▶️ Play Double Ball Drops</button>
     <button onclick="pauseSection('dbd')">⏸️ Pause Double Ball Drops</button>
     <button onclick="toggleSpeedSection('dbd')">⏩ Speed Double Ball Drops (0.33x/ 1.0x)</button>
+    <button id="toggleViewBtn" onclick="toggleView()">🖼️ Show Image</button>
 </div>
 
-<!-- Row 1 -->
-<div class="grid-row">
-    <div class="grid-item"><video class="sync-video dbd" controls muted loop><source src="double_ball/sample_5/gt.mp4"></video></div>
-    <div class="grid-item"><video class="sync-video dbd" controls muted loop><source src="double_ball/sample_5/wan5b_lora.mp4"></video></div>
-    <div class="grid-item"><video class="sync-video dbd" controls muted loop><source src="double_ball/sample_5/wan5b.mp4"></video></div>
-    <div class="grid-item"><video class="sync-video dbd" controls muted loop><source src="double_ball/sample_5/wan14b.mp4"></video></div>
-    <div class="grid-item"><video class="sync-video dbd" controls muted loop><source src="double_ball/sample_5/hunyuan.mp4"></video></div>
-    <div class="grid-item"><video class="sync-video dbd" controls muted loop><source src="double_ball/sample_5/veo3.mp4"></video></div>
-    <div class="grid-item"><video class="sync-video dbd" controls muted loop><source src="double_ball/sample_5/cosmos2b.mp4"></video></div>
-    <div class="grid-item"><video class="sync-video dbd" controls muted loop><source src="double_ball/sample_5/cosmos14b.mp4"></video></div>
-</div>
-
-<!-- Row 2 -->
-<div class="grid-row">
-    <div class="grid-item"><video class="sync-video dbd" controls muted loop><source src="double_ball/sample_6/gt.mp4"></video></div>
-    <div class="grid-item"><video class="sync-video dbd" controls muted loop><source src="double_ball/sample_6/wan5b_lora.mp4"></video></div>
-    <div class="grid-item"><video class="sync-video dbd" controls muted loop><source src="double_ball/sample_6/wan5b.mp4"></video></div>
-    <div class="grid-item"><video class="sync-video dbd" controls muted loop><source src="double_ball/sample_6/wan14b.mp4"></video></div>
-    <div class="grid-item"><video class="sync-video dbd" controls muted loop><source src="double_ball/sample_6/hunyuan.mp4"></video></div>
-    <div class="grid-item"><video class="sync-video dbd" controls muted loop><source src="double_ball/sample_6/veo3.mp4"></video></div>
-    <div class="grid-item"><video class="sync-video dbd" controls muted loop><source src="double_ball/sample_6/cosmos2b.mp4"></video></div>
-    <div class="grid-item"><video class="sync-video dbd" controls muted loop><source src="double_ball/sample_6/cosmos14b.mp4"></video></div>
-</div>
-
-<!-- Row 3 -->
-<div class="grid-row">
-    <div class="grid-item">
-        <video class="sync-video dbd" controls muted loop><source src="double_ball/sample_29/gt.mp4"></video>
-        <div class="video-label">Earth</div>
+<!-- Grid of Videos -->
+<div id="videoGrid">
+    <!-- Row 1 -->
+    <div class="grid-row">
+        <div class="grid-item"><video class="sync-video dbd" controls muted loop><source src="double_ball/sample_5/gt.mp4"></video></div>
+        <div class="grid-item"><video class="sync-video dbd" controls muted loop><source src="double_ball/sample_5/wan5b_lora.mp4"></video></div>
+        <div class="grid-item"><video class="sync-video dbd" controls muted loop><source src="double_ball/sample_5/wan5b.mp4"></video></div>
+        <div class="grid-item"><video class="sync-video dbd" controls muted loop><source src="double_ball/sample_5/wan14b.mp4"></video></div>
+        <div class="grid-item"><video class="sync-video dbd" controls muted loop><source src="double_ball/sample_5/hunyuan.mp4"></video></div>
+        <div class="grid-item"><video class="sync-video dbd" controls muted loop><source src="double_ball/sample_5/veo3.mp4"></video></div>
+        <div class="grid-item"><video class="sync-video dbd" controls muted loop><source src="double_ball/sample_5/cosmos2b.mp4"></video></div>
+        <div class="grid-item"><video class="sync-video dbd" controls muted loop><source src="double_ball/sample_5/cosmos14b.mp4"></video></div>
     </div>
 
-    <div class="grid-item">
-        <video class="sync-video dbd" controls muted loop><source src="double_ball/sample_29/wan5b_lora.mp4"></video>
-        <div class="video-label">Gravity Adapter (ours)</div>
+    <!-- Row 2 -->
+    <div class="grid-row">
+        <div class="grid-item"><video class="sync-video dbd" controls muted loop><source src="double_ball/sample_6/gt.mp4"></video></div>
+        <div class="grid-item"><video class="sync-video dbd" controls muted loop><source src="double_ball/sample_6/wan5b_lora.mp4"></video></div>
+        <div class="grid-item"><video class="sync-video dbd" controls muted loop><source src="double_ball/sample_6/wan5b.mp4"></video></div>
+        <div class="grid-item"><video class="sync-video dbd" controls muted loop><source src="double_ball/sample_6/wan14b.mp4"></video></div>
+        <div class="grid-item"><video class="sync-video dbd" controls muted loop><source src="double_ball/sample_6/hunyuan.mp4"></video></div>
+        <div class="grid-item"><video class="sync-video dbd" controls muted loop><source src="double_ball/sample_6/veo3.mp4"></video></div>
+        <div class="grid-item"><video class="sync-video dbd" controls muted loop><source src="double_ball/sample_6/cosmos2b.mp4"></video></div>
+        <div class="grid-item"><video class="sync-video dbd" controls muted loop><source src="double_ball/sample_6/cosmos14b.mp4"></video></div>
     </div>
 
-    <div class="grid-item">
-        <video class="sync-video dbd" controls muted loop><source src="double_ball/sample_29/wan5b.mp4"></video>
-        <div class="video-label">Wan 5B</div>
-    </div>
-
-    <div class="grid-item">
-        <video class="sync-video dbd" controls muted loop><source src="double_ball/sample_29/wan14b.mp4"></video>
-        <div class="video-label">Wan 14B</div>
-    </div>
-
-    <div class="grid-item">
-        <video class="sync-video dbd" controls muted loop><source src="double_ball/sample_29/hunyuan.mp4"></video>
-        <div class="video-label">Hunyuan</div>
-    </div>
-
-    <div class="grid-item">
-        <video class="sync-video dbd" controls muted loop><source src="double_ball/sample_29/veo3.mp4"></video>
-        <div class="video-label">Veo3</div>
-    </div>
-
-    <div class="grid-item">
-        <video class="sync-video dbd" controls muted loop><source src="double_ball/sample_29/cosmos2b.mp4"></video>
-        <div class="video-label">Cosmos 2B</div>
-    </div>
-
-    <div class="grid-item">
-        <video class="sync-video dbd" controls muted loop><source src="double_ball/sample_29/cosmos14b.mp4"></video>
-        <div class="video-label">Cosmos 14B</div>
+    <!-- Row 3 -->
+    <div class="grid-row">
+        <div class="grid-item"><video class="sync-video dbd" controls muted loop><source src="double_ball/sample_29/gt.mp4"></video><div class="video-label">Earth</div></div>
+        <div class="grid-item"><video class="sync-video dbd" controls muted loop><source src="double_ball/sample_29/wan5b_lora.mp4"></video><div class="video-label">Gravity Adapter (ours)</div></div>
+        <div class="grid-item"><video class="sync-video dbd" controls muted loop><source src="double_ball/sample_29/wan5b.mp4"></video><div class="video-label">Wan 5B</div></div>
+        <div class="grid-item"><video class="sync-video dbd" controls muted loop><source src="double_ball/sample_29/wan14b.mp4"></video><div class="video-label">Wan 14B</div></div>
+        <div class="grid-item"><video class="sync-video dbd" controls muted loop><source src="double_ball/sample_29/hunyuan.mp4"></video><div class="video-label">Hunyuan</div></div>
+        <div class="grid-item"><video class="sync-video dbd" controls muted loop><source src="double_ball/sample_29/veo3.mp4"></video><div class="video-label">Veo3</div></div>
+        <div class="grid-item"><video class="sync-video dbd" controls muted loop><source src="double_ball/sample_29/cosmos2b.mp4"></video><div class="video-label">Cosmos 2B</div></div>
+        <div class="grid-item"><video class="sync-video dbd" controls muted loop><source src="double_ball/sample_29/cosmos14b.mp4"></video><div class="video-label">Cosmos 14B</div></div>
     </div>
 </div>
+
+<!-- Single Image (hidden by default) -->
+<div id="singleImage" style="display:none; text-align:center;">
+    <img src="figures/double_ball_quali.pdf" alt="Summary Image" style="max-width:100%; height:auto;">
+</div>
+
+<script>
+function toggleView() {
+    const grid = document.getElementById('videoGrid');
+    const image = document.getElementById('singleImage');
+    const btn = document.getElementById('toggleViewBtn');
+
+    if (grid.style.display === 'none') {
+        grid.style.display = 'block';
+        image.style.display = 'none';
+        btn.textContent = '🖼️ Show Image';
+    } else {
+        grid.style.display = 'none';
+        image.style.display = 'block';
+        btn.textContent = '🎬 Show Videos';
+    }
+}
+</script>
+
 
 <div style="text-align:center; margin:30px 0;">
     <img src="figures/double_ball_plot.png" alt="Figure 2: Galileo's violation" style="width:60%;">
