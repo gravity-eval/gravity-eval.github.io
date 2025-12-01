@@ -283,10 +283,11 @@ Models Suffer Sub-Earth Gravity and Don’t Know Galileo’s Principle...for now
 
 <!-- DBD Section Controls -->
 <div class="controls">
+    <button id="toggleViewBtn" onclick="toggleView()">🖼️ Galileo Check</button>
     <button onclick="playSection('dbd')">▶️ Play Double Ball Drops</button>
     <button onclick="pauseSection('dbd')">⏸️ Pause Double Ball Drops</button>
     <button onclick="toggleSpeedSection('dbd')">⏩ Speed Double Ball Drops (0.33x/ 1.0x)</button>
-    <button id="toggleViewBtn" onclick="toggleView()">🖼️ Show Image</button>
+    
 </div>
 
 <!-- Grid of Videos -->
@@ -329,14 +330,15 @@ Models Suffer Sub-Earth Gravity and Don’t Know Galileo’s Principle...for now
 </div>
 
 <!-- Single Image (hidden by default) -->
-<div id="singleImage" style="display:none; text-align:center;">
-    <img src="figures/double_ball_quali.pdf" alt="Summary Image" style="max-width:100%; height:auto;">
+<div id="singlePDF" style="display:none; text-align:center;">
+    <embed src="figures/double_ball_quali.pdf" type="application/pdf" width="100%" height="800px" />
 </div>
+
 
 <script>
 function toggleView() {
     const grid = document.getElementById('videoGrid');
-    const image = document.getElementById('singleImage');
+    const image = document.getElementById('singlePDF');
     const btn = document.getElementById('toggleViewBtn');
 
     if (grid.style.display === 'none') {
