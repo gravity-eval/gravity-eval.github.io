@@ -120,6 +120,15 @@ Models Suffer Sub-Earth Gravity and Don’t Know Galileo’s Principle...for now
 }
 </style>
 
+<h2 style="text-align:center; margin-top:30px;">Abstract</h2>
+
+<p style="max-width:900px; margin:auto; text-align:justify; line-height:1.5;">
+    Video generators are increasingly evaluated as potential world models, which requires them to encode and understand physical laws. We investigate their representation of a fundamental law: gravity. Out-of-the-box video generators consistently generate objects falling at an effectively slower acceleration. However, these physical tests are often confounded by ambiguous metric scale. We first investigate whether observed physical errors are artifacts of these ambiguities (e.g., incorrect frame rate assumptions). We find that even temporal rescaling cannot correct the high-variance gravity artifacts. To rigorously isolate the underlying physical representation from these confounds, we introduce a unit-free, two-object protocol that tests the timing ratio <strong>t₁² / t₂² = h₁ / h₂</strong>, a relationship independent of <em>g</em>, focal length, and scale. This relative test reveals violations of Galileo’s equivalence principle. We then demonstrate that this physical gap can be partially mitigated with targeted specialization. A lightweight low-rank adaptor fine-tuned on only 100 single-ball clips raises <em>g<sub>eff</sub></em> from 1.81 m/s² to 6.43 m/s² (reaching 65% of terrestrial gravity). This specialist adaptor also generalizes zero-shot to two-ball drops and inclined planes, offering initial evidence that specific physical laws can be corrected with minimal data.
+</p>
+
+
+
+
 <!-- <h2>Teaser</h2>
 <div class="caption">Generated Videos Show Sub Earth gravity and Dont Follow Galileo’s Principle</div>
 
