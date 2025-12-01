@@ -76,6 +76,12 @@
         .grid-item {
             width: 250px;
             text-align: center;
+
+        .grid-item video {
+            width: 1.15in;        /* 3 inches wide */
+            height: 1.56in;       /* 2 inches tall */
+            object-fit: contain; /* keep aspect ratio */
+        }
         }
     </style>
 </head>
@@ -84,7 +90,7 @@
 
 <h1>
 Objects in Generated Videos Are Slower Than They Appear:<br>
-Models Suffer Sub-Earth Gravity and Don’t Know Galileo’s Principle...for now.
+Models Suffer Sub-Earth Gravity and Don’t Know Galileo’s Principle...for now
 </h1>
 
 
@@ -198,8 +204,7 @@ Models Suffer Sub-Earth Gravity and Don’t Know Galileo’s Principle...for now
 <!-- DBD Section Controls -->
 <div class="controls">
     <button id="toggleViewBtn" onclick="toggleView()">🖼️ Galileo Check</button>
-    <button onclick="playSection('dbd')">▶️ Play Double Ball Drops</button>
-    <button onclick="pauseSection('dbd')">⏸️ Pause Double Ball Drops</button>
+    <button onclick="playPauseVideos()">▶️ Play / ⏸️ Pause All</button>
     <button onclick="toggleSpeedSection('dbd')">⏩ Speed Double Ball Drops (0.33x/ 1.0x)</button>
     
 </div>
@@ -253,6 +258,10 @@ Models Suffer Sub-Earth Gravity and Don’t Know Galileo’s Principle...for now
     <img src="figures/double_ball_quali.png" alt="Summary Image" style="max-width:100%; height:auto;">
 </div>
 
+.grid-item video {
+    width: 3in;   /* 3 inches wide */
+    height: 2in;  /* 2 inches tall */
+}
 
 
 <script>
@@ -290,8 +299,7 @@ function toggleView() {
 
 <!-- SBD Section Controls ONLY -->
 <div class="controls">
-    <button onclick="playSection('sbd')">▶️ Play Single Ball Drops</button>
-    <button onclick="pauseSection('sbd')">⏸️ Pause Single Ball Drops</button>
+    <button onclick="playPauseVideos()">▶️ Play / ⏸️ Pause All</button>
     <button onclick="toggleSpeedSection('sbd')">⏩ Speed Single Ball Drops (0.33x/ 1.0x)</button>
 </div>
 
@@ -382,8 +390,7 @@ function toggleView() {
 
 <!-- Inclined Plane Controls ONLY -->
 <div class="controls">
-    <button onclick="playSection('inclined')">▶️ Play Inclined Plane</button>
-    <button onclick="pauseSection('inclined')">⏸️ Pause Inclined Plane</button>
+    <button onclick="playPauseVideos()">▶️ Play / ⏸️ Pause All</button>
     <button onclick="toggleSpeedSection('inclined')">⏩ Speed Inclined Plane (0.33x/ 1.0x)</button>
 </div>
 
@@ -429,8 +436,7 @@ function toggleView() {
 
 <!-- Real World Controls -->
 <div class="controls">
-    <button onclick="playSection('real')">▶️ Play Real World</button>
-    <button onclick="pauseSection('real')">⏸️ Pause Real World</button>
+    <button onclick="playPauseVideos()">▶️ Play / ⏸️ Pause All</button>
     <button onclick="toggleSpeedSection('real')">⏩ Speed Real World (0.33x/ 1.0x)</button>
 </div>
 
@@ -500,15 +506,18 @@ function toggleView() {
 <!-- JavaScript -->
 <script>
 
-function playSection(sectionClass) {
-    document.querySelectorAll("." + sectionClass).forEach(v => {
-        v.currentTime = 0;
-        v.play();
-    });
-}
+let videosPlaying = false;
 
-function pauseSection(sectionClass) {
-    document.querySelectorAll("." + sectionClass).forEach(v => v.pause());
+function playPauseVideos() {
+    const videos = document.querySelectorAll('#videoGrid video');
+    videos.forEach(video => {
+        if (videosPlaying) {
+            video.pause();
+        } else {
+            video.play();
+        }
+    });
+    videosPlaying = !videosPlaying;
 }
 
 const sectionSpeedState = {};
